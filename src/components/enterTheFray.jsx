@@ -251,7 +251,7 @@ class EnterTheFray extends Component {
                 <button
                   className="btn btn-dark mt-2 mb-4"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollNewFoe("Ironsworn")}
                 >
                   <RollIcon /> Random Foe
@@ -286,7 +286,7 @@ class EnterTheFray extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewFoeType()}
                     >
                       <RollIcon /> Foe Name

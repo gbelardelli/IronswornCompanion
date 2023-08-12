@@ -13,15 +13,15 @@ class Characters extends Component {
   }
   getNewStats() {
     return [
-      { id: 1, type: "core", stat: "Edge", value: 0 },
-      { id: 2, type: "core", stat: "Heart", value: 0 },
-      { id: 3, type: "core", stat: "Iron", value: 0 },
-      { id: 4, type: "core", stat: "Shadow", value: 0 },
-      { id: 5, type: "core", stat: "Wits", value: 0 },
-      { id: 6, type: "status", stat: "Health", value: 5 },
-      { id: 7, type: "status", stat: "Spirit", value: 5 },
-      { id: 8, type: "status", stat: "Supply", value: 5 },
-      { id: 9, type: "status", stat: "Momentum", value: 2 },
+      { id: 1, type: "core", stat: "Destrezza", value: 0 },
+      { id: 2, type: "core", stat: "Cuore", value: 0 },
+      { id: 3, type: "core", stat: "Ferro", value: 0 },
+      { id: 4, type: "core", stat: "Ombra", value: 0 },
+      { id: 5, type: "core", stat: "Ingegno", value: 0 },
+      { id: 6, type: "status", stat: "Vita", value: 5 },
+      { id: 7, type: "status", stat: "Spirito", value: 5 },
+      { id: 8, type: "status", stat: "Risorse", value: 5 },
+      { id: 9, type: "status", stat: "Impeto", value: 2 },
     ];
   }
 
@@ -37,15 +37,15 @@ class Characters extends Component {
     player.inventory = [];
     player.stats = this.props.newPlayer.Stats.map((s) => {
       if (s.value === "" || s.value < 0) s.value = 0;
-      else if (s.value > 4 && s.type != "status") s.value = 4;
+      else if (s.value > 4 && s.type !== "status") s.value = 4;
       return s;
     });
-    if (this.props.newPlayer.Name != "" && !players.find((p) => p.name == this.props.newPlayer.Name)) {
+    if (this.props.newPlayer.Name !== "" && !players.find((p) => p.name === this.props.newPlayer.Name)) {
       players.push(player);
       this.setState({ players: players });
       this.resetNewPlayer();
     }
-    this.props.addLog("event", `${player.name} began their journey in the Ironlands`);
+    this.props.addLog("event", `${player.name} inizia il suo viaggio nelle Ironlands`);
   };
 
   resetNewPlayer(props = null) {
@@ -68,7 +68,7 @@ class Characters extends Component {
       }
     }
 
-    if (pos != -1) players.splice(pos, 1);
+    if (pos !== -1) players.splice(pos, 1);
 
     this.setState({ players: players });
   };
@@ -128,7 +128,7 @@ class Characters extends Component {
   handleOnRollPlayerPrimaryStat = () => {
     let rn = this.props.oracles.PrimaryStat;
     const newPlayerStats = this.props.newPlayer.Stats.map((s) => {
-      if (s.type == "core") s.value = s.id == rn ? 3 : 0;
+      if (s.type === "core") s.value = s.id === rn ? 3 : 0;
       return s;
     });
     this.setState({ newPlayerStats });
@@ -137,7 +137,7 @@ class Characters extends Component {
   handleNewPlayerStatChanged = (evt) => {
     let statName = evt.target.getAttribute("data-name");
     const newPlayerStats = this.props.newPlayer.Stats.map((s) => {
-      if (s.stat == statName) s.value = evt.target.value;
+      if (s.stat === statName) s.value = evt.target.value;
       return s;
     });
     this.setState({ newPlayerStats });
@@ -154,7 +154,7 @@ class Characters extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Characters</h1>
+        <h1>Personaggi</h1>
         <div className="row">
           <div className="col">
             <div className="row">
@@ -164,16 +164,16 @@ class Characters extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerName()}
                     >
-                      <RollIcon /> Name
+                      <RollIcon /> Nome
                     </button>
                   </div>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Name"
+                    placeholder="Nome del personagggio"
                     aria-label="Name"
                     aria-describedby="basic-addon2"
                     value={this.props.newPlayer.Name}
@@ -186,16 +186,16 @@ class Characters extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerGoal()}
                     >
-                      <RollIcon /> Goal
+                      <RollIcon /> Obiettivo
                     </button>
                   </div>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Goal"
+                    placeholder="Obiettivo del personaggio"
                     aria-label="Character Goal"
                     aria-describedby="basic-addon2"
                     value={this.props.newPlayer.Goal}
@@ -209,16 +209,16 @@ class Characters extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerRole()}
                     >
-                      <RollIcon /> Role
+                      <RollIcon /> Ruolo
                     </button>
                   </div>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Role"
+                    placeholder="Ruolo del personaggio"
                     aria-label="Character Role"
                     aria-describedby="basic-addon2"
                     value={this.props.newPlayer.Role}
@@ -230,16 +230,16 @@ class Characters extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerDescriptor()}
                     >
-                      <RollIcon /> Descriptor
+                      <RollIcon /> Descrittore
                     </button>
                   </div>
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Descriptor"
+                    placeholder="Descrittore del personaggio"
                     aria-label="Character Descriptor"
                     aria-describedby="basic-addon2"
                     value={this.props.newPlayer.Descriptor}
@@ -251,14 +251,15 @@ class Characters extends Component {
             <div className="row">
               <div className="col">
                 <div className="alert alert-secondary">
-                  There are five stats in total. Each is given a value from 1 to 4 (Level depending). To start, choose a
-                  difficulty and place the bonuses for that difficulty across your five stats in any order. You can also
-                  roll on the oracle to leave your primary stat choice down to fate.
+                  Un personaggio ha cinque caratteristiche in totale. Ognuna può assumere un valore da 1 a 4 (in base al
+                  livello). Per iniziare, scegli una difficoltà e assegna i bonus di quella difficoltà alle cinque
+                  caratteristiche nell'ordine che vuoi. Puoi anche chiedere all'Oracolo di scegliere per te la tua
+                  caratteristica primaria.
                   <div className="difficulty-tags">
                     <div className="row">
                       <div className="col-12">
                         <div className="btn-group btn-group-justified">
-                          <button className="btn btn-block btn-secondary btn-tag">CHALLENGE</button>
+                          <button className="btn btn-block btn-secondary btn-tag">FACILE</button>
                           <button className="btn btn-block btn-dark btn-tag">4,3,3,2,2</button>
                         </div>
                       </div>
@@ -266,7 +267,7 @@ class Characters extends Component {
                     <div className="row">
                       <div className="col-12">
                         <div className="btn-group btn-group-justified">
-                          <button className="btn btn-block btn-secondary btn-tag">PERILOUS</button>
+                          <button className="btn btn-block btn-secondary btn-tag">PERICOLOSO</button>
                           <button className="btn btn-block btn-dark btn-tag">3,2,2,1,1</button>
                         </div>
                       </div>
@@ -274,7 +275,7 @@ class Characters extends Component {
                     <div className="row">
                       <div className="col-12">
                         <div className="btn-group btn-group-justified">
-                          <button className="btn btn-block btn-secondary btn-tag">GRIM</button>
+                          <button className="btn btn-block btn-secondary btn-tag">IMPOSSIBILE</button>
                           <button className="btn btn-block btn-dark btn-tag">3,2,1,1,0</button>
                         </div>
                       </div>
@@ -291,10 +292,10 @@ class Characters extends Component {
                   type="button"
                   onClick={() => this.handleOnRollPlayerPrimaryStat()}
                 >
-                  <RollIcon /> Primary Stat
+                  <RollIcon /> Statistica primaria
                 </button>
               </div>
-              {this.props.newPlayer.Stats.filter((s) => s.type == "core").map((s) => (
+              {this.props.newPlayer.Stats.filter((s) => s.type === "core").map((s) => (
                 <div className="col-lg-2 col-sm-12">
                   <h6 className="mt-3">{s.stat.toUpperCase()}</h6>
                   <input
@@ -303,7 +304,7 @@ class Characters extends Component {
                     type="number"
                     min="1"
                     max="4"
-                    value={s.value == 0 ? "" : s.value}
+                    value={s.value === 0 ? "" : s.value}
                     placeholder={s.stat}
                     onChange={(e) => this.handleNewPlayerStatChanged(e)}
                   />
@@ -314,13 +315,13 @@ class Characters extends Component {
               <div className="col">
                 <button className="btn btn-dark" type="button" onClick={() => this.handleAddCharacter()}>
                   <i className="fas fa-plus" aria-hidden="true"></i>
-                  &nbsp;Add Character
+                  &nbsp;Aggiungi personaggio
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <TitleBlock title="CHARACTER SELECTION" />
+        <TitleBlock title="SELEZIONA PERSONAGGIO" />
 
         <div className="row mt-4">
           {this.props.players.map((player) => (
@@ -329,15 +330,15 @@ class Characters extends Component {
                 <div className="card-body">
                   <h4 className="mb-2">{player.name}</h4>
                   <p>
-                    <span className="modesto">Role: </span>
+                    <span className="modesto">Ruolo: </span>
                     <span>{player.role}</span>
                   </p>
                   <p>
-                    <span className="modesto">Goal: </span>
+                    <span className="modesto">Obiettivo: </span>
                     <span>{player.goal}</span>
                   </p>
                   <p>
-                    <span className="modesto">Descriptor: </span>
+                    <span className="modesto">Descrittore: </span>
                     <span>{player.descriptor}</span>
                   </p>
                   <div className="row">
@@ -349,7 +350,7 @@ class Characters extends Component {
                           onClick={() => this.props.onPlayerSelect(player.name)}
                         >
                           <i className="fas fa-user-plus" aria-hidden="true"></i>
-                          &nbsp;Select
+                          &nbsp;Seleziona
                         </Link>
                       </HashRouter>
                       {/* <button
@@ -362,12 +363,12 @@ class Characters extends Component {
                     </div>
                     <div className="col-md-6 col-sm-12">
                       <DangerButton
-                        buttonText="Delete"
+                        buttonText="Elimina"
                         additionalButtonClasses="btn-block"
                         iconClass="fas fa-times"
                         onDangerClick={this.handlePlayerDelete}
                         deleteId={player.name}
-                        deleteMessage="Are you sure you want to delete this player?"
+                        deleteMessage="Sicuro di eliminare il personaggio?"
                       />
                     </div>
                   </div>

@@ -34,7 +34,7 @@ class StatTrack extends Component {
     return (
       <React.Fragment>
         <div className="">
-          <div className={`stat-track stat-track-${this.props.stat.stat == "Momentum" ? "16" : this.props.max} `}>
+          <div className={`stat-track stat-track-${this.props.stat.stat === "Impeto" ? "16" : this.props.max} `}>
             {this.props.stat.hideLabel != true ? (
               <React.Fragment>
                 <span className="track-title modesto">{this.props.stat.stat}</span>
@@ -45,7 +45,7 @@ class StatTrack extends Component {
             <div className={` slider-container ${this.props.hideThumb ? "hide-thumb" : ""}`}>
               <ul className="slider-ticks">
                 {this.props.stat.trackLabels !== undefined &&
-                this.props.stat.trackLabels.filter((tl) => tl != "").length > 0 ? (
+                this.props.stat.trackLabels.filter((tl) => tl !== "").length > 0 ? (
                   <React.Fragment>
                     {this.props.stat.trackLabels.map((t) => (
                       <li key={UniqueKeyGenerator.generate()} className="slider-tick slider-tick-label">

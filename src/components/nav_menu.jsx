@@ -9,29 +9,29 @@ class NavMenu extends Component {
     baseUrl: "/Ironsworn",
     sections: [
       {
-        title: "Campaign",
+        title: "Campagna",
         pages: [
           {
             url: "/characters",
-            pageName: "Characters",
+            pageName: "Personaggi",
             icon: "fas fa-users",
             active: false,
           },
           {
             url: "/journal",
-            pageName: "Journal",
+            pageName: "Diario",
             icon: "fas fa-pen-fancy",
             active: false,
           },
           {
             url: "/log",
-            pageName: "Campaign Log",
+            pageName: "Registro della campagna",
             icon: "fas fa-pen-nib",
             active: false,
           },
           {
             url: "/world",
-            pageName: "World Truths",
+            pageName: "Verità del mondo",
             icon: "fas fa-globe-americas",
             active: false,
           },
@@ -43,7 +43,7 @@ class NavMenu extends Component {
           },
           {
             url: "/locations",
-            pageName: "Locations and Settlements",
+            pageName: "Luoghi e insediamenti",
             icon: "fas fa-map-signs",
             active: false,
           },
@@ -62,7 +62,7 @@ class NavMenu extends Component {
         ],
       },
       {
-        title: "Character",
+        title: "Personaggio",
         pages: [
           {
             url: "/background",

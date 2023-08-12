@@ -148,7 +148,7 @@ class Journal extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Journal</h1>
+        <h1>Diario di viaggio</h1>
         <div className="row">
           <div className="col"></div>
         </div>
@@ -158,7 +158,7 @@ class Journal extends Component {
               {this.getSelectedFile() ? (
                 <React.Fragment>
                   <h2>
-                    Title:{" "}
+                    Titolo:{" "}
                     <ContentEditable
                       innerRef={this.contentEditable}
                       html={this.getSelectedFile().title}
@@ -172,7 +172,7 @@ class Journal extends Component {
                     <Editor
                       defaultValue={this.getSelectedFile().content}
                       onChange={(e) => this.props.handleFileContentsChange(e, this.getSelectedFile().id)}
-                      placeholder="Write something about your journey..."
+                      placeholder="Scrivi qualcosa sul tuo viaggio..."
                     />
                   </div>
                   <div className="row journal-foot">
@@ -182,12 +182,12 @@ class Journal extends Component {
                     </div>
                     <div className="col-lg-6 col-12 text-right">
                       <DangerButton
-                        buttonText="Delete Journal Page"
+                        buttonText="Elimina la pagina"
                         additionalButtonClasses="btn-sm"
                         iconClass="fas fa-times"
                         onDangerClick={this.handleRemoveJournalFile}
                         deleteId={this.getSelectedFile().id}
-                        deleteMessage="Are you sure you want to remove this journal entry?"
+                        deleteMessage="Sicuro di voler rimuovere la pagina?"
                       />
                     </div>
                     <div className="row">
@@ -196,7 +196,7 @@ class Journal extends Component {
                           hideHeader={false}
                           modalWidth={1000}
                           modalHeight={700}
-                          buttonText="Moves"
+                          buttonText="Mosse"
                           modalComponent={
                             <Moves
                               moves={this.props.moves}
@@ -208,14 +208,14 @@ class Journal extends Component {
                             />
                           }
                           icon="game-icon game-icon-move icon-md"
-                          title="Moves"
+                          title="Mosse"
                         />
                         <Modal
                           className="ml-2"
                           hideHeader={false}
                           modalWidth={1000}
                           modalHeight={700}
-                          buttonText="Oracles"
+                          buttonText="Oracolo"
                           modalComponent={
                             <OracleRoller
                               oracles={this.props.oracles}
@@ -223,7 +223,7 @@ class Journal extends Component {
                             />
                           }
                           icon="game-icon game-icon-crystal-ball icon-md"
-                          title="Oracles"
+                          title="Oracolo"
                         />
                       </div>
                     </div>
@@ -231,7 +231,7 @@ class Journal extends Component {
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <div className="alert alert-secondary">Choose/Create a file to begin editing</div>
+                  <div className="alert alert-secondary">Scegli/Crea un file per modificarlo</div>
                 </React.Fragment>
               )}
             </div>
@@ -239,7 +239,7 @@ class Journal extends Component {
           <div className="col-lg-3 col-12">
             <div className="card p-3 " style={{ minHeight: "70vh" }}>
               <button className="btn btn-dark" onClick={() => this.addFile()}>
-                <i className="fa fa-plus" aria-hidden="true"></i> Add File
+                <i className="fa fa-plus" aria-hidden="true"></i> Aggiungi pagina
               </button>
               <SortableTree
                 style={{ minHeight: "70vh" }}

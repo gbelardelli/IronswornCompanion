@@ -71,21 +71,21 @@ class Log extends Component {
         <h1>{this.props.title}</h1>
         <p>
           {this.props.description} <br />
-          <strong>Logs can be edited by clicking on the entry and changing the text.</strong>
+          <strong>Le note possono essere modificate cliccandoci sopra e cambiando il testo.</strong>
         </p>
 
         <div className="row">
           <div className="col-lg-4 col-sm-12">
             <div className="input-group mb-3">
               <div className="input-group-prepend">
-                <label className="btn btn-dark btn-tag">Filter</label>
+                <label className="btn btn-dark btn-tag">Filtro</label>
               </div>
 
               <select className="form-control" value={this.state.filter} onChange={(e) => this.handleFilterChanged(e)}>
-                <option value="">All</option>
-                <option value="fiction">Fiction</option>
-                <option value="meta">Meta</option>
-                {this.props.title !== "Background" ? <option value="event">Events</option> : React.Fragment}
+                <option value="">Tutto</option>
+                <option value="fiction">Narrativa</option>
+                <option value="meta">Meta info</option>
+                {this.props.title !== "Background" ? <option value="event">Eventi</option> : React.Fragment}
               </select>
             </div>
           </div>
@@ -124,7 +124,7 @@ class Log extends Component {
                           iconClass="fas fa-times"
                           onDangerClick={this.props.onLogItemDeleted}
                           deleteId={this.props.logs.indexOf(log)}
-                          deleteMessage="Are you sure you want to delete this log entry?"
+                          deleteMessage="Eliminare questa nota?"
                         />
                       </div>
                     </div>
@@ -158,7 +158,7 @@ class Log extends Component {
             <div className="btn-group btn-group-justified">
               <button className="btn  btn-block btn-dark" onClick={() => this.props.onAddLog("fiction")}>
                 <i className="fas fa-pen-nib"></i>
-                &nbsp;Add Fiction
+                &nbsp;Nota narrativa
                 <div className="keys text-center">
                   <span className="key">Shift</span> + <span className="key">Enter</span>
                 </div>
@@ -166,7 +166,7 @@ class Log extends Component {
 
               <button className="btn btn-block btn-secondary" onClick={() => this.props.onAddLog("meta")}>
                 <i className="fas fa-terminal"></i>
-                &nbsp;Add Meta
+                &nbsp;Informazioni generiche
                 <div className="keys text-center">
                   <span className="key">Ctrl</span> + <span className="key">Enter</span>
                 </div>

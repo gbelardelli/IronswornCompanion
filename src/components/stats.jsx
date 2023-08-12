@@ -48,7 +48,7 @@ class Stats extends Component {
 
   valueToStat(val, steps) {
     let n = 100 / (steps - 1);
-    return val == 0 ? 0 : Math.round(val / n);
+    return val === 0 ? 0 : Math.round(val / n);
   }
 
   handleStatTrackChange = (evt, name, steps, offset) => {
@@ -57,7 +57,7 @@ class Stats extends Component {
     const players = this.props.players.map((p) => {
       if (p.selected) {
         const stats = p.stats.map((s) => {
-          if (s.stat == name) {
+          if (s.stat === name) {
             s.value = stat;
           }
           return s;
@@ -67,7 +67,7 @@ class Stats extends Component {
     });
 
     this.setState({ players });
-    if (name == "Momentum") this.checkMomentum();
+    if (name === "Impeto") this.checkMomentum();
     this.props.updatePlayerSelect(this.props.selectedPlayer.name);
   };
 
@@ -77,7 +77,7 @@ class Stats extends Component {
     const players = this.props.players.map((p) => {
       if (p.selected) {
         const debilities = p.debilities.map((d) => {
-          if (d.name == name) {
+          if (d.name === name) {
             d.active = checked;
             this.props.addLog("event", `${p.name} is ${checked ? "" : "no longer"} ${d.name}`);
           }
@@ -108,7 +108,7 @@ class Stats extends Component {
     const players = this.props.players.map((p) => {
       if (p.selected) {
         const stats = p.stats.map((s) => {
-          if (s.stat == "Momentum" && s.value > p.maxMomentum) {
+          if (s.stat === "Impeto" && s.value > p.maxMomentum) {
             s.value = p.maxMomentum;
           }
           return s;
@@ -123,16 +123,17 @@ class Stats extends Component {
   handleOnExperienceChange = (type) => {
     const players = this.props.players.map((p) => {
       if (p.selected) {
+        // eslint-disable-next-line default-case
         switch (type) {
           case "INC":
             p.totalExperience = p.totalExperience + 1 >= 30 ? 30 : p.totalExperience + 1;
-            this.props.addLog("event", `${p.name}'s experience grows`);
+            this.props.addLog("event", `L'esperienza di ${p.name} è aumentata ora ha ${p.totalExperience} punti`);
             break;
           case "DEC":
             p.totalExperience = p.totalExperience - 1 <= 0 ? 0 : p.totalExperience - 1;
 
             p.spentExperience = p.totalExperience < p.spentExperience ? p.totalExperience : p.spentExperience;
-            this.props.addLog("event", `${p.name}'s experience deminishes`);
+            this.props.addLog("event", `L'esperienza di ${p.name} è diminuita ora ha ${p.totalExperience} punti`);
             break;
           case "REG":
             p.spentExperience = p.spentExperience - 1 <= 0 ? 0 : p.spentExperience - 1;
@@ -162,7 +163,7 @@ class Stats extends Component {
     //     break;
     // }
     const players = this.props.players.map((p) => {
-      if (p.name == playerName) {
+      if (p.name === playerName) {
         p[field] += val;
         p[field] = p[field] > 40 ? 40 : p[field];
         p[field] = p[field] < 0 ? 0 : p[field];
@@ -180,10 +181,10 @@ class Stats extends Component {
         p.stats.map((s) => {
           if (s.stat !== stat) return s;
           s.value = parseInt(s.value) + val;
-          if (s.type == "core") {
+          if (s.type === "core") {
             s.value = s.value > 4 ? 4 : s.value;
             s.value = s.value < 0 ? 0 : s.value;
-          } else if (s.stat == "Momentum") {
+          } else if (s.stat === "Impeto") {
             s.value = s.value > 10 ? 10 : s.value;
             s.value = s.value < -6 ? -6 : s.value;
           } else {
@@ -203,7 +204,7 @@ class Stats extends Component {
     const players = this.props.players.map((p) => {
       if (p.selected === true) {
         p.stats.map((s) => {
-          if (s.stat !== "Momentum") return s;
+          if (s.stat !== "Impeto") return s;
           s.value = this.props.selectedPlayer.resetMomentum;
           return s;
         });
@@ -234,7 +235,7 @@ class Stats extends Component {
     return (
       <React.Fragment>
         <h1 className="">{this.props.selectedPlayer.name}</h1>
-        <TitleBlock title="TRACKS" />
+        <TitleBlock title="BARRE" />
         <div className="row text-center">
           <div className="col mt-4">
             <div className="btn btn-outline-dark momentum-stat mr-1">
@@ -254,34 +255,34 @@ class Stats extends Component {
               max={10}
               // onChange={this.handleMomentumTrackChange}
               onChange={this.handleStatTrackChange}
-              value={this.props.selectedPlayer.stats.find((s) => s.stat == "Momentum").value}
-              stat={this.props.selectedPlayer.stats.find((s) => s.stat == "Momentum")}
+              value={this.props.selectedPlayer.stats.find((s) => s.stat === "Impeto").value}
+              stat={this.props.selectedPlayer.stats.find((s) => s.stat === "Impeto")}
             />
             <StatTrack
               min={0}
               max={5}
               onChange={this.handleStatTrackChange}
-              stat={this.props.selectedPlayer.stats.find((s) => s.stat == "Health")}
-              value={this.props.selectedPlayer.stats.find((s) => s.stat == "Health").value}
+              stat={this.props.selectedPlayer.stats.find((s) => s.stat === "Vita")}
+              value={this.props.selectedPlayer.stats.find((s) => s.stat === "Vita").value}
             />
             <StatTrack
               min={0}
               max={5}
-              value={this.props.selectedPlayer.stats.find((s) => s.stat == "Spirit").value}
+              value={this.props.selectedPlayer.stats.find((s) => s.stat === "Spirito").value}
               onChange={this.handleStatTrackChange}
-              stat={this.props.selectedPlayer.stats.find((s) => s.stat == "Spirit")}
+              stat={this.props.selectedPlayer.stats.find((s) => s.stat === "Spirito")}
             />
             <StatTrack
               min={0}
               max={5}
-              value={this.props.selectedPlayer.stats.find((s) => s.stat == "Supply").value}
+              value={this.props.selectedPlayer.stats.find((s) => s.stat === "Risorse").value}
               onChange={this.handleStatTrackChange}
-              stat={this.props.selectedPlayer.stats.find((s) => s.stat == "Supply")}
+              stat={this.props.selectedPlayer.stats.find((s) => s.stat === "Risorse")}
             />
           </div>
           <div className="d-block d-md-none text-center">
             {this.props.selectedPlayer.stats
-              .filter((s) => s.type == "status")
+              .filter((s) => s.type === "status")
               .map((s) => (
                 <div className="col-12 col-lg stat-col">
                   <div key={s.stat} className="card stat-card">
@@ -315,11 +316,11 @@ class Stats extends Component {
           </div>
         </div>
 
-        <TitleBlock title="STATS" />
+        <TitleBlock title="CARATTERISTICHE" />
         <div className="container">
           <div className="row row-cols-5 text-center">
             {this.props.selectedPlayer.stats
-              .filter((s) => s.type == "core")
+              .filter((s) => s.type === "core")
               .map((s) => (
                 <div className="col-12 col-lg stat-col">
                   <div key={s.stat} className="card stat-card">
@@ -352,7 +353,7 @@ class Stats extends Component {
               ))}
           </div>
         </div>
-        <TitleBlock title="EXPERIENCE" />
+        <TitleBlock title="ESPERIENZA" />
         <ExperienceTrack
           selectedPlayer={this.props.selectedPlayer}
           key={this.props.selectedPlayer}
@@ -360,7 +361,7 @@ class Stats extends Component {
           onExperienceChange={this.handleOnExperienceChange}
         />
         <div className="stat-tracks">
-          <TitleBlock title="BONDS" />
+          <TitleBlock title="LEGAMI" />
 
           <ProgressTrack
             key={this.props.selectedPlayer}
@@ -370,7 +371,7 @@ class Stats extends Component {
             }
             // hideButtons={true}
           />
-          <TitleBlock title="FAILURE" />
+          <TitleBlock title="FALLIMENTI" />
 
           <ProgressTrack
             key={this.props.selectedPlayer}
@@ -384,7 +385,7 @@ class Stats extends Component {
             <div className="col-4 d-sm-none d-lg-block"></div>
             <div className="col-lg-4 col-sm-12">
               <RollButton
-                buttonText="Learn from your Failures"
+                buttonText="Impara dai tuoi sbagli"
                 roll={this.props.selectedPlayer.failureRoll}
                 onRoll={() => this.handleOnProgressRollClicked()}
               />
@@ -394,12 +395,12 @@ class Stats extends Component {
         </div>
 
         <div className="debilities text-center">
-          <TitleBlock title="DEBILITIES" />
+          <TitleBlock title="DEBOLEZZE" />
           <div className="row modesto">
             <div className="col-12 col-lg-4 mt-4">
               <h4 className="mb-4">CONDITIONS</h4>
               {this.props.selectedPlayer.debilities
-                .filter((d) => d.type == "conditions")
+                .filter((d) => d.type === "conditions")
                 .map((d) => (
                   <div key={d.name} className="deb-cb">
                     <input
@@ -416,7 +417,7 @@ class Stats extends Component {
             <div className="col-12 col-lg-4 mt-4">
               <h4 className="mb-4">BANES</h4>
               {this.props.selectedPlayer.debilities
-                .filter((d) => d.type == "banes")
+                .filter((d) => d.type === "banes")
                 .map((d) => (
                   <div className="deb-cb">
                     <input
@@ -433,7 +434,7 @@ class Stats extends Component {
             <div className="col-12 col-lg-4 mt-4">
               <h4 className="mb-4">BURDENS</h4>
               {this.props.selectedPlayer.debilities
-                .filter((d) => d.type == "burdens")
+                .filter((d) => d.type === "burdens")
                 .map((d) => (
                   <div className="deb-cb">
                     <input
@@ -452,7 +453,7 @@ class Stats extends Component {
 
         <div className="row">
           <div className="col">
-            <TitleBlock title="BONDS" />
+            <TitleBlock title="LEGAMI" />
             <table className="table table-striped modesto">
               <thead>
                 <th>Type</th>
@@ -486,7 +487,7 @@ class Stats extends Component {
 
         <div className="row">
           <div className="col">
-            <TitleBlock title="DETAILS" />
+            <TitleBlock title="DETTAGLI" />
             <div className="row">
               <div className="col-lg-6 col-sm-12">
                 <div className="input-group mb-3">
@@ -494,7 +495,7 @@ class Stats extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerName()}
                     >
                       <RollIcon /> Name
@@ -503,8 +504,8 @@ class Stats extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Name"
-                    aria-label="Name"
+                    placeholder="Nome del personaggio"
+                    aria-label="Nome"
                     aria-describedby="basic-addon2"
                     value={this.props.selectedPlayer.name}
                     onChange={(e) => this.handleSelectedPlayerFieldChange("name", e.target.value)}
@@ -516,7 +517,7 @@ class Stats extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerGoal()}
                     >
                       <RollIcon /> Goal
@@ -525,8 +526,8 @@ class Stats extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Character Goal"
-                    aria-label="Character Goal"
+                    placeholder="Obiettivo del personaggio"
+                    aria-label="Obiettivo del personaggio"
                     aria-describedby="basic-addon2"
                     value={this.props.selectedPlayer.goal}
                     onChange={(e) => this.handleSelectedPlayerFieldChange("goal", e.target.value)}
@@ -539,7 +540,7 @@ class Stats extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerRole()}
                     >
                       <RollIcon /> Role
@@ -560,7 +561,7 @@ class Stats extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollPlayerDescriptor()}
                     >
                       <RollIcon /> Descriptor

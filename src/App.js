@@ -628,7 +628,7 @@ class App extends Component {
     const players = this.state.players.map((p) => {
       if (p.selected) {
         p.stats.map((s) => {
-          if (s.stat == "Momentum") {
+          if (s.stat === "Impeto") {
             s.value = p.resetMomentum;
           }
         });
@@ -875,8 +875,8 @@ class App extends Component {
                 </Route>
                 <Route path="/log">
                   <Log
-                    title="Campaign Log"
-                    description="Use this section to provide additional information about your campaign. Use this to keep notes between sessions or to log metagame information."
+                    title="Diario della campagna"
+                    description="Utilizza questa sezione per aggiungere informazioni utili sulla campagna, note o informazioni di metagame."
                     logs={this.state.logs}
                     logInput={this.state.logInput}
                     onLogInputChanged={this.handleLogInputChanged}
@@ -957,9 +957,8 @@ class App extends Component {
                 <Route path="/background">
                   <Log
                     title="Background"
-                    description="Use this section to provide additional context to your character.
-                      Snippets of background information can be entered in the text box
-                      below."
+                    description="Usa questa sezione per fornire un contesto aggiuntivo al tuo personaggio. 
+                      Frammenti di informazioni sul background del personaggio possono essere inseriti nella casella di testo sottostante."
                     logs={this.getSelectedPlayer() ? this.getSelectedPlayer().background : null}
                     logInput={this.state.backgroundInput}
                     onLogInputChanged={this.handleBackgroundInputChanged}

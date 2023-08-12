@@ -265,7 +265,7 @@ class NPCs extends Component {
             <button
               className="btn btn-dark mt-2 mb-4"
               type="button"
-              title="Roll on the oracle"
+              title="Chiedi all'Oracolo"
               onClick={() => this.handleOnAddRandomNPC()}
             >
               <RollIcon /> Random NPC
@@ -277,7 +277,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNPCRace()}
                     >
                       <RollIcon /> Race
@@ -302,7 +302,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCGoal()}
                     >
                       <RollIcon /> Goal
@@ -323,7 +323,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCDescriptor()}
                     >
                       <RollIcon /> Descriptor
@@ -344,7 +344,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCConversation()}
                     >
                       <RollIcon /> Conversation
@@ -386,7 +386,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCName()}
                     >
                       <RollIcon /> Name
@@ -408,7 +408,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCRole()}
                     >
                       <RollIcon /> Role
@@ -429,7 +429,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCDisposition()}
                     >
                       <RollIcon /> Disposition
@@ -451,7 +451,7 @@ class NPCs extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewNPCKnowledge()}
                     >
                       <RollIcon /> Knowledge
@@ -474,7 +474,7 @@ class NPCs extends Component {
                 <button
                   className="btn btn-dark"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleAddNPC()}
                 >
                   <i className="fas fa-plus" aria-hidden="true"></i>

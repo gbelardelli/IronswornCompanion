@@ -31,7 +31,7 @@ class DangerButton extends Component {
                 <div className="card-header bg-dark text-light modesto">
                   <div className="row">
                     <div className="col">
-                      <h6>Are you sure?</h6>
+                      <h6>Sicuro?</h6>
                     </div>
                     <div className="col text-right">
                       <button className="btn btn-sm btn-outline-light" onClick={() => this.changeModalState(false)}>
@@ -53,7 +53,7 @@ class DangerButton extends Component {
                           <i className="fa fa-times" aria-hidden="true"></i>&nbsp;No
                         </button>
                         <button className="btn btn-danger mx-2" onClick={() => this.handleDanger(this.props.deleteId)}>
-                          <i className="fa fa-check" aria-hidden="true"></i>&nbsp;Yes
+                          <i className="fa fa-check" aria-hidden="true"></i>&nbsp;Si
                         </button>
                       </div>
                     </div>

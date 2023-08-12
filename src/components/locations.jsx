@@ -401,7 +401,7 @@ class Locations extends Component {
                 <button
                   className="btn btn-dark"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollName()}
                 >
                   <RollIcon /> Name
@@ -437,7 +437,7 @@ class Locations extends Component {
                 <button
                   className="btn btn-dark"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollDescriptor()}
                 >
                   <RollIcon /> Descriptor
@@ -459,7 +459,7 @@ class Locations extends Component {
                 <button
                   className="btn btn-dark"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollFeature()}
                 >
                   <RollIcon /> Mainland
@@ -469,7 +469,7 @@ class Locations extends Component {
                 <button
                   className="btn btn-secondary"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollCoastalFeature()}
                 >
                   <RollIcon /> Coastal
@@ -492,7 +492,7 @@ class Locations extends Component {
                 <button
                   className="btn btn-dark"
                   type="button"
-                  title="Roll on the oracle"
+                  title="Chiedi all'Oracolo"
                   onClick={() => this.handleOnRollLocationTrouble()}
                 >
                   <RollIcon /> Trouble

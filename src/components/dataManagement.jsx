@@ -81,7 +81,7 @@ class DataManager extends Component {
 
   componentDidMount() {
     if (!this.props.loadGoogle) return;
-    console.log("TE");
+    console.log("componentDidMount");
     var script = document.createElement("script");
     script.onload = this.handleClientLoad;
     script.src = "https://apis.google.com/js/api.js";
@@ -89,6 +89,7 @@ class DataManager extends Component {
   }
 
   initClient = () => {
+    console.log("initClient: API_KEY=[" + API_KEY + "]");
     try {
       gapi.client
         .init({
@@ -112,6 +113,7 @@ class DataManager extends Component {
   };
 
   signInFunction = () => {
+    console.log("signInFunction");
     this.state.googleAuth.signIn();
     this.updateSigninStatus();
   };
@@ -130,6 +132,7 @@ class DataManager extends Component {
   };
 
   setSigninStatus = async () => {
+    console.log("componentDidMount");
     var user = this.state.googleAuth.currentUser.get();
     console.log("USER:", user);
     if (user.wt == null) {
@@ -173,7 +176,7 @@ class DataManager extends Component {
       if (!r) return;
 
       //check to see if the Ironsworn Companion Data directory exists
-      let dir = r?.files?.find((f) => f.name == "Ironsworn Companion Data");
+      let dir = r?.files?.find((f) => f.name === "Ironsworn Companion Data");
 
       if (dir !== undefined) {
         // console.log("DIR", dir.id);
@@ -553,7 +556,7 @@ class DataManager extends Component {
           buttonText="Reset"
           iconClass="fas fa-refresh"
           onDangerClick={this.props.onResetClick}
-          deleteMessage="Are you sure you want to reset the gamestate?"
+          deleteMessage="Effettuo il reset del gioco? Tutti i personaggi, il diario di viaggio e della campagna andranno persi se non sono stati salvati."
         />
         <TitleBlock title="Load Data" />
         <div className="alert alert-secondary">

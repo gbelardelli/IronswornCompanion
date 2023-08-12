@@ -170,8 +170,9 @@ class Delve extends Component {
 
   handleOnProgressionChanged = (increment) => {
     const delves = this.props.delves.map((d) => {
-      if (d.id == this.props.selectedDelveId) {
+      if (d.id === this.props.selectedDelveId) {
         let val = 0;
+        // eslint-disable-next-line default-case
         switch (parseInt(d.rank)) {
           case 0:
             val = increment ? 12 : -12;
@@ -215,7 +216,7 @@ class Delve extends Component {
 
   handleonDenizenChange = (foeId, idx) => {
     const delves = this.props.delves.map((del) => {
-      if (del.id == this.props.selectedDelveId) {
+      if (del.id === this.props.selectedDelveId) {
         del.denizens.map((d, i) => {
           if (i === idx) {
             let foe = this.props.foes.find((f) => f.id === foeId);
@@ -258,6 +259,7 @@ class Delve extends Component {
     // if (!changeThemeOrDomain) rn = 100;
     let themeText = selectedDelve.theme;
     let domainText = selectedDelve.domain;
+    // eslint-disable-next-line default-case
     switch (rn) {
       case 99:
         let themes = this.props.delveCards.filter((d) => d.Type === "Theme");
@@ -280,8 +282,8 @@ class Delve extends Component {
         return;
     }
     delves[this.props.selectedDelveId].changeThemeOrDomain = changeThemeOrDomain;
-    let theme = this.props.delveCards.find((t) => t.Name == themeText);
-    let domain = this.props.delveCards.find((d) => d.Name == domainText);
+    let theme = this.props.delveCards.find((t) => t.Name === themeText);
+    let domain = this.props.delveCards.find((d) => d.Name === domainText);
 
     let features = [...theme.Features, ...domain.Features];
     let feature = features.filter((f) => f.Chance <= rn).slice(-1)[0]?.Description ?? features[0].Description;
@@ -833,7 +835,7 @@ class Delve extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewTheme()}
                     >
                       <RollIcon /> Theme
@@ -861,7 +863,7 @@ class Delve extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewDomain()}
                     >
                       <RollIcon /> Domain
@@ -912,7 +914,7 @@ class Delve extends Component {
                     <button
                       className="btn btn-block btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnDiscoverSite()}
                     >
                       <i className="fas fa-dungeon"></i> Discover a Site
@@ -989,7 +991,7 @@ class Delve extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewTheme()}
                     >
                       <RollIcon /> Theme
@@ -1017,7 +1019,7 @@ class Delve extends Component {
                     <button
                       className="btn btn-dark"
                       type="button"
-                      title="Roll on the oracle"
+                      title="Chiedi all'Oracolo"
                       onClick={() => this.handleOnRollNewDomain()}
                     >
                       <RollIcon /> Domain

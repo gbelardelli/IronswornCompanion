@@ -10,11 +10,11 @@ class DiceResult extends Component {
 
   canBurn = () => {
     if (
-      (this.props.diceResult.HitType == "Miss" || this.props.diceResult.HitType == "Weak Hit") &&
-      this.props.diceResult.RollType == "Action"
+      (this.props.diceResult.HitType === "Miss" || this.props.diceResult.HitType === "Weak Hit") &&
+      this.props.diceResult.RollType === "Action"
     ) {
       if (this.props.selectedPlayer) {
-        let momentum = this.props.selectedPlayer.stats.find((p) => p.stat == "Momentum").value;
+        let momentum = this.props.selectedPlayer.stats.find((p) => p.stat === "Impeto").value;
         if (
           momentum >= this.props.selectedPlayer.resetMomentum &&
           (momentum > this.props.diceResult.Challenge1Value || momentum > this.props.diceResult.Challenge2Value)
@@ -36,7 +36,7 @@ class DiceResult extends Component {
 
   burnClick = (touch = false) => {
     if (!this.canBurn() || touch) return;
-    let momentum = this.props.selectedPlayer.stats.find((p) => p.stat == "Momentum").value;
+    let momentum = this.props.selectedPlayer.stats.find((p) => p.stat === "Impeto").value;
     const diceResult = this.props.diceResult;
     diceResult.Challenge1Value = momentum > diceResult.Challenge1Value ? 0 : diceResult.Challenge1Value;
     diceResult.Challenge2Value = momentum > diceResult.Challenge2Value ? 0 : diceResult.Challenge2Value;
@@ -57,7 +57,7 @@ class DiceResult extends Component {
     let ch1 = this.props.diceResult.Challenge1Value;
     let ch2 = this.props.diceResult.Challenge2Value;
     if (this.canBurn()) {
-      let momentum = this.props.selectedPlayer.stats.find((p) => p.stat == "Momentum").value;
+      let momentum = this.props.selectedPlayer.stats.find((p) => p.stat === "Impeto").value;
       ch1 =
         momentum > this.props.diceResult.Challenge1Value ? (
           <u>{this.props.diceResult.Challenge1Value}</u>

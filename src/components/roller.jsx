@@ -8,7 +8,7 @@ class Roller extends Component {
     Stat: "",
     AddVal: 0,
     actionRoll: null,
-    stats: ["Edge", "Heart", "Iron", "Shadow", "Wits", "Health", "Spirit", "Supply"],
+    stats: ["Destrezza", "Cuore", "Ferro", "Ombra", "Ingegno", "Vita", "Spirito", "Risorse"],
     d100: 75,
   };
 
