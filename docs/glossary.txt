@@ -46,32 +46,18 @@ https://effortlessmountain.github.io/ironsworn-asset-workbench/
 
 
 
-Altre mosse in combattimento
-Durante un combattimento non ti affiderai solo alle mosse di combattimento. Esegui altre mosse adatte alla situazione, ai tuoi intenti e alle azioni dei tuoi avversari.
-Affrontare un pericolo
-Esegui questa mossa quando cerchi di evitare o superare un ostacolo in combattimento, o quando ti concentri sulla difesa:
-⦁   oltrepassi un canale con un salto mentre cavalchi verso la battaglia? Affronta un pericolo +lama;
-⦁   l’enorme orso mostruoso ruggisce, sputando fiotti di bava. Raccoglierai il coraggio per affrontare questa belva terrificante? Affronta un pericolo +cuore;
-⦁   sollevi lo scudo quando il razziatore sferra il suo attacco, mantenendo la posizione nonostante gli incessanti colpi d’ascia? Affronta un pericolo + ferro.
-Se è una mossa proattiva, cioè stai superando un ostacolo, eseguila quando hai l’iniziativa; se è reattiva, cioè stai cercando di evitare una minaccia immediata, è probabile che l’iniziativa sia del tuo avversario.
-Quando Affrontare un pericolo anziché Scontrarsi di fronte a un attacco? Se rispondi colpo su colpo, probabilmente ti stai Scontrando; se ti concentri sulla difesa, schivando, riparandoti dietro lo scudo o guadagnando una copertura, allora stai Affrontando un pericolo. Quest’ultima è meno rischiosa, perché puoi sfruttare una caratteristica favorita e le penalità in caso di colpo fiacco sono relativamente leggere. A differenza di Scontrarsi, non avrai occasione di infliggere immediatamente danno in caso di colpo a segno, ma un bel colpo con Affrontare un pericolo può comunque metterti in una buona posizione per la prossima mossa.
-Probabilmente Affronterai un pericolo anche quando il tuo avversario cercherà di guadagnare un vantaggio con un’azione diversa da un attacco diretto: si sposta verso gli alberi per guadagnare copertura mentre scaglia una freccia verso di te, cerca di provocare con le parole una tua reazione avventata, ti spinge per farti perdere l’equilibrio e favorire il suo prossimo attacco. Cosa fai? Immaginalo, poi esegui la mossa. Se vai a vuoto, probabilmente subirai una riduzione dell’impeto per rappresentare il contraccolpo. Il tuo avversario ha l’iniziativa e cercherà di sfruttare il suo vantaggio.
-Affrontare un pericolo potrebbe anche essere usato per fuggire direttamente dalla battaglia. Se hai la strada libera e i mezzi per scappare, fai questa mossa per vedere se riesci ad allontanarti.
-Infine, nei casi in cui un avversario rappresenta un ostacolo di scarsa rilevanza, Affrontare un pericolo può essere usata per evitare il combattimento o per risolvere la tua azione contro un nemico da poco. Ad esempio, puoi Affrontare un pericolo per aggirare furtivamente un avversario o allontanarti di corsa da un potenziale combattimento. Se stai affrontando un avversario minore da una posizione di netto vantaggio, ad esempio se stai scoccando frecce da un nascondiglio, puoi Affrontare un pericolo per vedere cosa succede. In entrambi i casi, andare a vuoto con la mossa potrebbe obbligarti a Gettarti nella mischia.
-Assicurarsi un vantaggio
-Questa mossa è effettuata in combattimento quando cerchi di ottenere una qualche leva, di migliorare la tua posizione o di preparare un’altra mossa:
-⦁   prendi con attenzione la mira prima di tirare? Assicurati un vantaggio +ingegno;
-⦁   cerchi con un’abile finta di sbilanciare il tuo avversario e crearti uno spiraglio? Assicurati un vantaggio +ombra;
-⦁   cerchi di demoralizzare il tuo avversario con un grido intimidatorio mentre carichi? Assicurati un vantaggio +ferro.
-Assicurarsi un vantaggio può essere usata quando hai l’iniziativa o come modo per guadagnare una posizione favorevole prima dello scontro. Meccanicamente è una mossa potente per aumentare il tuo impeto, in vista di una mossa decisiva. Narrativamente, è un ottimo modo per portare in scena azioni cinematografiche.
-Quando vuoi Assicurarti un vantaggio, immagina la situazione. Considera il terreno, le tue armi, la tua posizione, il tuo stile di combattimento e il tuo approccio. Considera il tuo avversario, le sue tattiche e la sua prontezza. Dove c’è un’opportunità? Immagina la tua azione, poi esegui la mossa.
-Costringere
-Costringere può essere usata come scorciatoia per chiudere un combattimento. Non devi Terminare il combattimento per arrenderti o negoziare la resa, perché Terminare il combattimento è l’esito di una battaglia disperata e probabilmente sanguinosa. Se tu o il tuo avversario avete altri obiettivi, prova con Costringere:
-⦁   provi a costringere il tuo avversario alla resa? Costringi +ferro;
-⦁   provi ad arrenderti, a ragionare o a negoziare? Costringi +cuore;
-⦁   convinci il tuo avversario ad abbandonare il combattimento con l’inganno? Costringi +ombra.
-Costringere deve essere sostenuto dalla narrazione. Quali sono le intenzioni del tuo avversario? Cosa prova per te? Sei un nemico odiato? Un potenziale pasto? Cosa è disposto a rischiare? Il combattimento stava volgendo a tuo o a suo favore? Che leva hai nei suoi confronti? Se non può ottenere nessun beneficio, non puoi eseguire questa mossa. Se non sei sicuro, Chiedi all’oracolo prima di Costringere.
-Costringere può essere usato proattivamente (quando hai l’iniziativa) o reattivamente (quando il tuo avversario ha l’iniziativa), in base alle circostanze. Offrire la resa è una risposta reattiva e può essere fatta quando non hai l’iniziativa, mentre cercare di Costringere il tuo avversario ad abbandonare le armi è una mossa proattiva, da eseguire quando hai il controllo.
-Aiutare un alleato
-Questa mossa è la scelta più ovvia quando vuoi potenziare le azioni di un tuo alleato. Immagina cosa fai per aiutarlo, poi Assicurati un vantaggio e concedi al tuo alleato i benefici del risultato.
-Dovresti avere l’iniziativa prima di provare ad Aiutare un alleato. Con un bel colpo, entrambi mantenete o prendete l’iniziativa: si tratta di un grande vantaggio per l’alleato, qualora fosse stato in difficoltà nell’ottenere progressi contro il suo avversario. Con un colpo fiacco o a vuoto, entrambi perdete l’iniziativa.
+Giocare a Giuramenti di ferro
+Nel gioco di ruolo da tavolo Giuramenti di ferro, sei un eroe che ha giurato di compiere pericolose imprese nell’ambientazione fantastica e oscura delle Terre di Ferro. Attraverserai terre selvagge inesplorate, combatterai battaglie disperate, stabilirai legami con comunità isolate e rivelerai i segreti di queste lande desolate. Soprattutto, presterai dei giuramenti d’acciaio e li porterai a compimento, a qualunque costo.
+Per giocare a Giuramenti di ferro, crei il tuo personaggio, prendi decisioni sul mondo in cui vivi e metti in moto la storia. Quando ti trovi di fronte a qualcosa di pericoloso o incerto, le tue scelte e i dadi determinano l’esito.
+In Giuramenti di ferro tu e uno o più persone giocate insieme per superare sfide e compiere imprese, senza la necessità di un GM. Il sistema di gioco vi aiuterà a esplorare le storie drammatiche dei vostri personaggi e dei loro fatidici giuramenti.
+Giuramenti di ferro è progettato principalmente per piccoli gruppi, fino a quattro giocatori. I personaggi interpretati dagli altri giocatori sono definiti dalle regole come tuoi alleati.
+
+
+
+
+
+
+
+
+
+
